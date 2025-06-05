@@ -1,14 +1,18 @@
-import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
+// src/App.jsx
 
-function App() {
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home/Home";
+import MainLayout from "./layout/MainLayout";
+
+const App = () => {
   return (
-    <>
-      <Router>
-        <div className="w-full min-h-screen bg-black">Hey!</div>
-      </Router>
-    </>
+    <MainLayout>
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </MainLayout>
   );
-}
+};
 
 export default App;
