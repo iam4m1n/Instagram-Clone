@@ -1,5 +1,3 @@
-// src/components/Header/LargeNav.jsx
-
 import React from "react";
 import { NavLink } from "react-router-dom";
 
@@ -21,15 +19,22 @@ const sidebarItems = [
 
 const LargeNav = () => {
   return (
-    <nav className="flex flex-col gap-4">
+    <nav className="flex flex-col gap-2 bg-black py-4 px-2 rounded-xl">
       {sidebarItems.map((item) => (
         <NavLink
           to={item.link}
           key={item.name}
-          className="flex items-center gap-3 px-4 py-2 hover:bg-gray-100 rounded-lg transition"
+          className={({ isActive }) =>
+            `flex items-center gap-3 px-4 py-2 rounded-lg transition
+            ${
+              isActive
+                ? "bg-neutral-800 text-white font-semibold"
+                : "text-gray-400 hover:bg-neutral-900"
+            }`
+          }
         >
           <img src={item.icon} alt={item.name} className="w-6 h-6" />
-          <span className="text-sm font-medium">{item.name}</span>
+          <span className="text-sm">{item.name}</span>
         </NavLink>
       ))}
     </nav>
