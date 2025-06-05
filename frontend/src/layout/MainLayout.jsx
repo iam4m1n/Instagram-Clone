@@ -1,6 +1,6 @@
 // src/layout/MainLayout.jsx
 import React from "react";
-import LargeNav from "../assets/components/Header/LargeNav";
+import LargeNav from "../components/Header/LargeNav";
 import { Outlet } from "react-router-dom";
 
 const MainLayout = () => {
