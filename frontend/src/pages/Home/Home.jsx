@@ -4,9 +4,11 @@ import React from "react";
 
 const Home = () => {
   return (
-    <div className="w-full h-auto p-4">
-      <h1 className="text-2xl font-bold mb-4 text-white">Home Page</h1>
-    </div>
+    <section className="max-w-xl mx-auto mt-6 space-y-6">
+      <Stories />
+      <div className="bg-gray-900 rounded-lg p-4 text-gray-300 text-center border border-gray-700">
+      </div>
+    </section>
   );
 };
 
