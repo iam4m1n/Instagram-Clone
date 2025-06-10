@@ -1,3 +1,13 @@
 spring:
   application:
     name: Instagram-Clone
+  datasource:
+    url: jdbc:postgresql://localhost:5432/instagram
+    username: am1n
+    password: 1234
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    database: postgresql
+    show-sql: true
