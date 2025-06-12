@@ -1,6 +1,5 @@
-package com.Am1n.Instagram_Clone.model.Post;
+package com.Am1n.Instagram_Clone.model;
 
-import com.Am1n.Instagram_Clone.model.User.UserEntity;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;

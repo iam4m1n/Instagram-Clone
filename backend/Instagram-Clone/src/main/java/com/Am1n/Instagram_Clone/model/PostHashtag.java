@@ -1,7 +1,5 @@
-package com.Am1n.Instagram_Clone.model.PostHashtag;
+package com.Am1n.Instagram_Clone.model;
 
-import com.Am1n.Instagram_Clone.model.Hashtag.Hashtag;
-import com.Am1n.Instagram_Clone.model.Post.Post;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToOne;

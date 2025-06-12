@@ -1,4 +1,4 @@
-package com.Am1n.Instagram_Clone.model.Hashtag;
+package com.Am1n.Instagram_Clone.model;
 
 import jakarta.persistence.*;
 import lombok.*;

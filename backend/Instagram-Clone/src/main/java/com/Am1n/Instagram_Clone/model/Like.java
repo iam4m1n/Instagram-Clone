@@ -1,7 +1,5 @@
-package com.Am1n.Instagram_Clone.model.Like;
+package com.Am1n.Instagram_Clone.model;
 
-import com.Am1n.Instagram_Clone.model.Post.Post;
-import com.Am1n.Instagram_Clone.model.User.UserEntity;
 import jakarta.persistence.*;
 import lombok.*;
 

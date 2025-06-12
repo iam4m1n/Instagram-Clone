@@ -1,4 +1,4 @@
-package com.Am1n.Instagram_Clone.model.User;
+package com.Am1n.Instagram_Clone.model;
 
 import com.Am1n.Instagram_Clone.enums.Status;
 import jakarta.persistence.*;

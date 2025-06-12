@@ -1,4 +1,4 @@
-package com.Am1n.Instagram_Clone.model.PostHashtag;
+package com.Am1n.Instagram_Clone.model;
 
 import jakarta.persistence.Embeddable;
 
