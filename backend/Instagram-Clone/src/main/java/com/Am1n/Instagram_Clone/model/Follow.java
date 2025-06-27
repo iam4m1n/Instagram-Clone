@@ -8,7 +8,7 @@ import java.util.UUID;
 
 @Entity
 @Table(
-        name = "follows",
+        name = "follow",
         uniqueConstraints = {
                 @UniqueConstraint(columnNames = {"follower_id", "followee_id"})
         }

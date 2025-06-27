@@ -8,7 +8,7 @@ import java.time.Instant;
 import java.util.UUID;
 
 @Entity
-@Table(name = "notifications")
+@Table(name = "notification")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

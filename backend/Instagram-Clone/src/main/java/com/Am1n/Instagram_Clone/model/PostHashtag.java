@@ -1,9 +1,6 @@
 package com.Am1n.Instagram_Clone.model;
 
-import jakarta.persistence.EmbeddedId;
-import jakarta.persistence.Entity;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.MapsId;
+import jakarta.persistence.*;
 
 @Entity
 public class PostHashtag {
@@ -13,10 +10,12 @@ public class PostHashtag {
 
     @ManyToOne
     @MapsId("postId")
+    @JoinColumn(name = "post_id")
     private Post post;
 
     @ManyToOne
     @MapsId("hashtagId")
+    @JoinColumn(name = "hashtag_id")
     private Hashtag hashtag;
 }
 

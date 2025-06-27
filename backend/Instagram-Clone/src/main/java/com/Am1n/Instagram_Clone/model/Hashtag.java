@@ -8,7 +8,7 @@ import java.util.UUID;
 
 @Entity
 @Table(
-        name = "hashtags",
+        name = "hashtag",
         uniqueConstraints = {
                 @UniqueConstraint(columnNames = "name")
         }
