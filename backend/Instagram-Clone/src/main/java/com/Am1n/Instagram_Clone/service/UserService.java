@@ -12,18 +12,34 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
+
 @Service
 @RequiredArgsConstructor
 public class UserService {
 
+    private final UserRepository userRepository;
+    private final ModelMapper modelMapper;
 
-    @Autowired
-    private UserRepository userRepository;
-    private ModelMapper modelMapper = new ModelMapper();
 
     public Page<UserDTO> getAllUsers(int page) {
         Pageable pageable = PageRequest.of(page, 5, Sort.by("joinDate").descending());
         return userRepository.findAll(pageable)
                 .map(user -> modelMapper.map(user, UserDTO.class));
     }
+
+    private final Map<UUID, String> userProfiles = new HashMap<>();
+
+    public String getProfile(UUID userId) {
+        return userRepository.findBioByUserId(userId);
+    }
+
+    public void updateProfile(UUID userId, String newBio) throws Exception {
+        UserEntity user = userRepository.findById(userId)
+                .orElseThrow(() -> new Exception(String.valueOf(userId)));
+        user.setBio(newBio);
+        userRepository.save(user);}
 }
+

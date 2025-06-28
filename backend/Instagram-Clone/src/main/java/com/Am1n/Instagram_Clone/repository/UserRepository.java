@@ -7,4 +7,6 @@ import java.util.UUID;
 
 @Repository
 public interface UserRepository extends JpaRepository<UserEntity, UUID> {
+    // Simulated in-memory storage
+    public default String findBioByUserId(UUID id) { return "Sample bio for: " + id; }
 }

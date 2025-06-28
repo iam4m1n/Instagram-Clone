@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.http.ResponseEntity;
 import com.Am1n.Instagram_Clone.service.UserService;
 
+import java.util.UUID;
+
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/users")
@@ -19,36 +21,46 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-//    Get list of users (search / discover)
-    @GetMapping("/")
-    public String getUsers(){
-        return "Users";
-    }
-
-//    Get user profile
-    @GetMapping("/{username}")
-    public String getUserProfile(@PathVariable String username){
-        return "User Profile";
-    }
-
-//    Update user profile
-    // todo: add @RequestBody UserDTO dto
-    @PutMapping("/{username}")
-    public String updateUser(@PathVariable String username){
-        return "Update user";
-    }
-
-//    Delete user
-    @DeleteMapping("/{username}")
-    public String deleteUser(@PathVariable String username){
-        return "delete user";
-    }
-
+////    Get list of users (search / discover)
+//    @GetMapping("/")
+//    public String getUsers(){
+//        return "Users";
+//    }
+//
+////    Get user profile
+//    @GetMapping("/{username}")
+//    public String getUserProfile(@PathVariable String username){
+//        return "User Profile";
+//    }
+//
+////    Update user profile
+//    // todo: add @RequestBody UserDTO dto
+//    @PutMapping("/{username}")
+//    public String updateUser(@PathVariable String username){
+//        return "Update user";
+//    }
+//
+////    Delete user
+//    @DeleteMapping("/{username}")
+//    public String deleteUser(@PathVariable String username){
+//        return "delete user";
+//    }
+//
 
     @GetMapping("/all")
     public Page<UserDTO> getAllUsers(
             @RequestParam(defaultValue = "0") int page) {
         return userService.getAllUsers(page);
+    }
+
+    @GetMapping("/{id}")
+    public String getProfile(@PathVariable UUID id) {
+        return userService.getProfile(id);
+    }
+
+    @PutMapping("/{id}")
+    public void updateProfile(@PathVariable UUID id, @RequestBody String bio) throws Exception {
+        userService.updateProfile(id, bio);
     }
 
 }
